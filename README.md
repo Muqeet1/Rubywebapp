@@ -1,7 +1,4 @@
-# README
-
-
-*Complete Ruby on rails developer app in progress..!
+#Complete Ruby on rails developer app in progress..!
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
