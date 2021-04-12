@@ -21,8 +21,8 @@ class ArticlesController < ApplicationController
 
   # POST /articles or /articles.json
   def create
-    #One way of calling though params
-    @article = Article.new(params.require(:article).permit(:title, :description))
+
+    @article = Article.new(article_params)
 
     respond_to do |format|
       if @article.save
@@ -38,7 +38,7 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1 or /articles/1.json
   def update
     respond_to do |format|
-      #Second way of calling through params
+
       if @article.update(article_params)
         format.html { redirect_to @article, notice: "Article was successfully updated." }
         format.json { render :show, status: :ok, location: @article }
@@ -57,9 +57,12 @@ class ArticlesController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+def time1
+  time = Time.new
+end
   private
-    # Use callbacks to share common setup or constraints between actions.
+    # Use callbacks (default method for other methods define once call it for multiple methods)
+    # to share common setup or constraints between actions.
     def set_article
       @article = Article.find(params[:id])
     end
